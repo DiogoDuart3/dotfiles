@@ -1,0 +1,5 @@
+-- Shell
+https://starship.rs/
+
+
+
