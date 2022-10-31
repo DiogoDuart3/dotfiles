@@ -1,11 +1,14 @@
 :set number
 :set relativenumber
 :set autoindent
+:set noexpandtab
 :set tabstop=4
 :set shiftwidth=4
 :set smarttab
 :set softtabstop=4
 :set mouse=a
+:set noswapfile
+:set scrolloff=4
 
 call plug#begin()
 
@@ -24,7 +27,7 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple c
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'RobertAudi/git-blame.vim'
+Plug 'zivyangll/git-blame.vim'
 
 set encoding=UTF-8
 
@@ -34,8 +37,9 @@ call plug#end()
 " nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
+nnoremap <S-F> :CocCommand eslint.executeAutofix<CR>
 
-nmap <F8> :TagbarToggle<CR>
+" nmap <F8> :TagbarToggle<CR>
 
 :set completeopt-=preview " For No Previews
 
